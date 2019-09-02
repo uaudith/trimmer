@@ -37,8 +37,8 @@ def trim(path,start,duration):
                           icon = 'check')
 
   fname=path.split('/')[-1]
-  #outname=(' ').join(fname.split('.')[:-1])+' '+tformat(duration)+'  from '+tformat(start)+'.'+fname.split('.')[-1]
-  outname=fname
+  outname=(' ').join(fname.split('.')[:-1])+' '+tformat(duration)+'  from '+tformat(start)+'.'+fname.split('.')[-1]
+  
   p=Popen(['ffmpeg' ,'-ss', str(start), '-i', path ,'-t', str(duration) ,'-c', 'copy', 
           outname],
           stdout=PIPE,
@@ -46,7 +46,7 @@ def trim(path,start,duration):
   while True:
     if not p.poll == None:
       clear_output(wait=True)
-      path=video_path.split('/')
+      path=path.split('/')
       path[-1]=''
       pathstr = '/'.join(str(part)for part in path)
 
