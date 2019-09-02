@@ -1,4 +1,5 @@
 from subprocess import Popen , PIPE
+import subprocess
 from IPython.display import HTML, clear_output
 import time
 import ipywidgets as widgets
